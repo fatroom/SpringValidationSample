@@ -12,10 +12,14 @@
                 <tr>
                     <td>Name:</td>
                     <td><form:input path="name" /></td>
+                    <%-- Show errors for name field --%>
+                    <td><form:errors path="name" /></td>
                 </tr>
                 <tr>
                     <td>Nickname:</td>
                     <td><form:input path="nickname" /></td>
+                    <%-- Show errors for nickname field --%>
+                    <td><form:errors path="nickname" /></td>
                 </tr>
                 <tr>
                     <td colspan="2">

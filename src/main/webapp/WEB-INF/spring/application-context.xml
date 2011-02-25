@@ -17,4 +17,9 @@
     <!-- Enables the Spring MVC @Controller programming model -->
     <mvc:annotation-driven />
 
+    <!-- this MessageSource is being used in a web application -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="i10n/messages"/>
+    </bean>
+
 </beans>

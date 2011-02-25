@@ -21,11 +21,28 @@
       <scope>test</scope>
     </dependency>
     
-    <!-- Spring dependencies -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>3.0.5.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>1.0.0.GA</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>4.1.0.Final</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.5.8</version>
     </dependency>
 
     <!-- JSTL 1.2 support for Tomcat -->
@@ -42,12 +59,20 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.6</source>
+          <target>1.6</target>
         </configuration>
       </plugin>
     </plugins>
 
   </build>
+
+  <repositories>
+    <repository>
+      <id>jboss-repo</id>
+      <name>JBoss Repo</name>
+      <url>https://repository.jboss.org/nexus/content/repositories/releases</url>
+    </repository>
+  </repositories>
 
 </project>
