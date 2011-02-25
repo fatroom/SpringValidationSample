@@ -19,8 +19,10 @@ public class PersonValidator implements Validator {
     }
 
     public void validate(Object obj, Errors e) {
-	ValidationUtils.rejectIfEmpty(e, "name", "name.empty");
-	ValidationUtils.rejectIfEmpty(e, "nickname", "nickname.empty");
+	ValidationUtils
+		.rejectIfEmpty(e, "name", "name.empty", "Can't be empty");
+	ValidationUtils.rejectIfEmpty(e, "nickname", "nickname.empty",
+		"Can't be empty");
     }
 
 }
