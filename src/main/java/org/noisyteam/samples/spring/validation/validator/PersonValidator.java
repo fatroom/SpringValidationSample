@@ -15,14 +15,12 @@ public class PersonValidator implements Validator {
      * This Validator validates just Person instances
      */
     public boolean supports(Class<?> clazz) {
-	return Person.class.equals(clazz);
+	    return Person.class.equals(clazz);
     }
 
     public void validate(Object obj, Errors e) {
-	ValidationUtils
-		.rejectIfEmpty(e, "name", "name.empty", "Can't be empty");
-	ValidationUtils.rejectIfEmpty(e, "nickname", "nickname.empty",
-		"Can't be empty");
+	    ValidationUtils.rejectIfEmpty(e, "name", "name.empty", "Can't be empty");
+	    ValidationUtils.rejectIfEmpty(e, "nickname", "nickname.empty","Can't be empty");
     }
 
 }
