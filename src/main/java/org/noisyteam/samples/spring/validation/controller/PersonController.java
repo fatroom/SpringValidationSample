@@ -3,6 +3,8 @@ package org.noisyteam.samples.spring.validation.controller;
 import javax.validation.Valid;
 import org.noisyteam.samples.spring.validation.model.Person;
 import org.noisyteam.samples.spring.validation.validator.PersonValidator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -18,6 +20,8 @@ import org.springframework.validation.BindingResult;
  */
 @Controller
 public class PersonController {
+    private static final Logger logger = LoggerFactory.getLogger(PersonController.class);
+
     private static final String DEFAULT_VIEW = "WEB-INF/views/home.jsp";
 
     @InitBinder("person")
@@ -27,14 +31,14 @@ public class PersonController {
 
     @RequestMapping(value = "/", method=RequestMethod.GET)
     public String home(Model model) {
-        System.out.println("PersonController: Passing through...");
+        logger.trace("Passing through...");
         model.addAttribute("person", new Person());
         return DEFAULT_VIEW;
     }
 
     @RequestMapping(value = "/", method=RequestMethod.POST)
     public String create(@Valid Person person, BindingResult result, Model model) {
-        System.out.println("PersonController: Saving action");
+        logger.trace("Saving action");
         model.addAttribute("person", person);
         return DEFAULT_VIEW;
     }

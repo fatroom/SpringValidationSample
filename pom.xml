@@ -42,7 +42,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
-      <version>1.5.8</version>
+      <version>1.5.6</version>
     </dependency>
 
     <!-- JSTL 1.2 support for Tomcat -->
